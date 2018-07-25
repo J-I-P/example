@@ -15,6 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/plus', function () {
-    return view('plus');
-});
+Route::get('/plus', 'ToDoController@index');
