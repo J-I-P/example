@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class ToDoController extends Controller
 {
-    function index(){
+    function plus(){
         return view('plus');
     }
 }
