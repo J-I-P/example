@@ -80,11 +80,20 @@
 
             <input type="button" value="calculate" name="calc" id="calc"><br>
 
-            <lable for="result">result: </lable>
+            <lable for="result1">result: </lable>
             <input type="text" id="result" name="result"><br>
 
-
         </div>
+
+        <div class="title m-b-md">
+            Button Test
+        </div>
+        <div>
+            Total：
+            <span id="result2" name="result2" ></span><br>
+        </div>
+        <button type="button" id = "add">+1</button>
+        <button type="button" id = "sub">-1</button>
     </div>
 </div>
 <!--<script src="js/jquery.min.js"></script>-->
@@ -97,10 +106,33 @@
         console.log(num1+num2);
         console.log(parseInt(num1)+parseInt(num2));
 
-        $("#result").val(parseInt(num1)+parseInt(num2));
+        $("#result1").val(parseInt(num1)+parseInt(num2));
 
         });
 
+    var count = 0;
+    $("#add").on("click", function(){
+        /*
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState == 4){
+                console.log(xhr.response);
+            }
+            console.log(count);
+            count++;
+            $("#result").val(count);
+        }*/
+
+        //xhr.open("GET", "", true);
+        //xhr.send();
+        count++;
+        $("#result2").html(count);
+    });
+
+    $("#sub").on("click", function(){
+        count--;
+        $("#result2").html(count);
+    });
 </script>
 </body>
 </html>

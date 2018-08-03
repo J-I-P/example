@@ -20,11 +20,11 @@ Route::get('/plus', 'ToDoController@plus');
 Route::group(['prefix' => 'user'], function(){
     Route::group(['prefix' => 'auth'], function(){
         //使用者註冊頁面
-        Route::get('/sign-up', 'User\UserAuthController@signUpPage');
+        Route::get('/sign-up', 'User\UserAuthController@signUpPage')->name('registerPage');
         //使用者資料新增
-        Route::post('/sign-up', 'User\UserAuthController@signUpProcess');
+        Route::post('/sign-up', 'User\UserAuthController@signUpProcess')->name('registerProcess');
         //使用者登入頁面
-        Route::get('/sign-in', 'User\UserAuthController@signInPage');
+        Route::get('/sign-in', 'User\UserAuthController@signInPage')->name('loginPage');
         //使用者登入處理
         Route::post('/sign-in', 'User\UserAuthController@signInProcess');
         //使用者登出

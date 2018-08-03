@@ -84,7 +84,7 @@
 
                 <div class="links">
                     <a href="./plus">Plus</a>
-                    <a href="https://laracasts.com">Laracasts</a>
+                    <a href="./ajax">Ajax</a>
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://google.com">GitHub</a>
