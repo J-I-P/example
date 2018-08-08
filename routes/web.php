@@ -56,5 +56,5 @@ Route::group(['prefix' => 'merchandise'], function(){
 });
 
 //交易紀錄頁面檢視
-Route::get('/transaction', 'Transaction\TransactionController@transactionListPage');
+Route::get('/transaction', 'Transaction\TransactionController@transactionListPage')->middleware(['user.auth']);
 

@@ -13,10 +13,10 @@
                 <select name="status">
                     <option value="C"
                         @if(old('status', $Merchandise->status)=='C') selected @endif>
-                    </option>
+                    C</option>
                     <option value="S"
                             @if(old('status', $Merchandise->status)=='S') selected @endif>
-                    </option>
+                    S</option>
                 </select>
             </label>
 
@@ -33,12 +33,8 @@
                 <input type="text" name="introduction" placeholder="商品介紹" value="{{ old('introduction', $Merchandise->introduction) }}">
             </label>
             <label>
-                商品名稱：
+                商品英文介紹：
                 <input type="text" name="introduction_en" placeholder="商品英文介紹" value="{{ old('introduction_en', $Merchandise->introduction_en) }}">
-            </label>
-            <label>
-                商品名稱：
-                <input type="text" name="name" placeholder="商品名稱" value="{{ old('name', $Merchandise->name) }}">
             </label>
             <label>
                 商品照片：
@@ -47,7 +43,7 @@
             </label>
             <label>
                 商品價格：
-                <input type="text" name="price" placeholder="商品價格" value="{{ old('price', $Merchadise->price) }}">
+                <input type="text" name="price" placeholder="商品價格" value="{{ old('price', $Merchandise->price) }}">
             </label>
             <label>
                 商品剩餘數量：
