@@ -113,9 +113,12 @@ class UserAuthController extends Controller
             return redirect(route('loginPage'))->withErrors($error_msg)->withInput();
         }
 
+        session()->put('user_id', $User->id);
+        return redirect()->intended('merchandise/');
     }
 
     public function signOut(){
-        echo("signout");
+        session()->forget('user_id');
+        return redirect('/merchandise/');
     }
 }

@@ -38,16 +38,18 @@ Route::group(['prefix' => 'merchandise'], function(){
     //商品清單檢視
     Route::get('/', 'Merchandise\MerchandiseController@merchandiseListPage');
     //商品管理清單檢視
-    Route::get('/manage', 'Merchandise\MerchandiseController@merchandiseManageListPage');
+    Route::get('/manage', 'Merchandise\MerchandiseController@merchandiseManageListPage')->middleware(['user.auth.admin']);
     //商品資料新增
-    Route::get('/create', 'Merchandise\MerchandiseController@merchandiseCreateProcess');
+    Route::get('/create', 'Merchandise\MerchandiseController@merchandiseCreateProcess')->middleware(['user.auth.admin']);
     Route::group(['prefix' => '{merchandise_id}'], function(){
+        Route::group(['middleware' => 'user.auth.admin'], function (){
+            //商品單品編輯頁面檢視
+            Route::get('/edit', 'Merchandise\MerchandiseController@merchandiseItemEditPage');
+            //商品單品資料修改
+            Route::put('/', 'Merchandise\MerchandiseController@merchandiseItemUpdateProcess');
+        });
         //商品單品檢視
         Route::get('/', 'Merchandise\MerchandiseController@merchandiseItemPage');
-        //商品單品編輯頁面檢視
-        Route::get('/edit', 'Merchandise\MerchandiseController@merchandiseItemEditPage');
-        //商品單品資料修改
-        Route::put('/', 'Merchandise\MerchandiseController@merchandiseItemUpdateProcess');
         //購買商品
         Route::post('/buy', 'Merchandise\MerchandiseController@merchandiseItemBuyProcess');
     });
