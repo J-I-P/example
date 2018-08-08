@@ -51,7 +51,7 @@ Route::group(['prefix' => 'merchandise'], function(){
         //商品單品檢視
         Route::get('/', 'Merchandise\MerchandiseController@merchandiseItemPage');
         //購買商品
-        Route::post('/buy', 'Merchandise\MerchandiseController@merchandiseItemBuyProcess');
+        Route::post('/buy', 'Merchandise\MerchandiseController@merchandiseItemBuyProcess')->middleware(['user.auth']);
     });
 });
 
