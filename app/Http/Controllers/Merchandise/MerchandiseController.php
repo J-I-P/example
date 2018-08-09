@@ -17,7 +17,7 @@ class MerchandiseController extends Controller
     //
     public function merchandiseListPage(){
         $row_per_page = 10;
-        $MerchandisePaginate = Merchandises::OrderBy('update_at', 'desc')->where('status', 'S')->paginate($row_per_page);
+        $MerchandisePaginate = Merchandises::OrderBy('updated_at', 'desc')->where('status', 'S')->paginate($row_per_page);
 
         foreach ($MerchandisePaginate as $Merchandise){
             if(!is_null($Merchandise->photo)){
