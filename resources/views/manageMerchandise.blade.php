@@ -5,6 +5,7 @@
         <h1>{{ $title }}</h1>
 
         @include('validationErrorMessage')
+        <a href="/merchandise/create" type="button">新增</a>
 
         <table class="table">
             <tr>
