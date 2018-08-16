@@ -28,7 +28,7 @@ Route::group(['prefix' => 'user'], function(){
         //使用者登入處理
         Route::post('/sign-in', 'User\UserAuthController@signInProcess');
         //使用者登出
-        Route::get('/sign-out', 'User\UserAuthController@signOut');
+        Route::get('/sign-out', 'User\UserAuthController@signOut')->name('logoutPage');
     });
 
 });

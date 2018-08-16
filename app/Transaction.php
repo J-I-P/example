@@ -18,4 +18,9 @@ class Transaction extends Model
         "buy_count",
         "total_price"
     ];
+
+    public function Merchandise(){
+        return $this->hasOne('App\Merchandises', 'id', 'merchandise_id');
+
+    }
 }
